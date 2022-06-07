@@ -1,0 +1,7 @@
+Steps:
+	- name: gcr.io/cloud-builder/docker
+	  args: [ "built", "-t", "cal:latest", "."]
+	- name: gcr.io/cloud-builder/docker
+	  args: [ "push", "cal:latest", "" ]
+	- name: gcr.io/cloud-bilders/gcloud
+	  args: ["app", "deploy", --image="cal.com"]
